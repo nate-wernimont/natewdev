@@ -105,6 +105,9 @@ IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
   popd
 )
 
+call :ExecuteCmd !NPM_CMD! install -g @angular/cli
+call :ExecuteCmd ng build natewdev --main "%DEPLOYMENT_SOURCE%" --output-path "%DEPLOYMENT_TARGET%" --delete-output-path
+
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 goto end
 
